@@ -21,6 +21,42 @@ menu.maxqspi=Max QSPI
 menu.usbstack=USB Stack
 menu.debug=Debug
 
+# DragonInjector v17(SAMD21)
+# ------------------------------
+dragoninjector_v17.name=DragonInjector V17
+dragoninjector_v17.vid.0=0x239A
+dragoninjector_v17.pid.0=0x001E
+dragoninjector_v17.vid.1=0x239A
+dragoninjector_v17.pid.1=0x001E
+dragoninjector_v17.upload.tool=bossac
+dragoninjector_v17.upload.protocol=sam-ba
+dragoninjector_v17.upload.maximum_size=57344
+dragoninjector_v17.upload.offset=0x2000
+dragoninjector_v17.upload.use_1200bps_touch=true
+dragoninjector_v17.upload.wait_for_upload_port=true
+dragoninjector_v17.upload.native_usb=true
+dragoninjector_v17.build.mcu=cortex-m0plus
+dragoninjector_v17.build.f_cpu=48000000L
+dragoninjector_v17.build.usb_product="DragonInjector"
+dragoninjector_v17.build.usb_manufacturer="DragonInjector"
+dragoninjector_v17.build.board=DragonInjector_V17
+dragoninjector_v17.build.core=arduino
+dragoninjector_v17.build.extra_flags=-DCRYSTALLESS -DADAFRUIT_TRINKET_M0 -D__SAMD21E16A__ -DARM_MATH_CM0PLUS {build.usb_flags}
+dragoninjector_v17.build.ldscript=linker_scripts/gcc/flash_with_bootloader.ld
+dragoninjector_v17.build.openocdscript=openocd_scripts/dragoninjector_v17.cfg
+dragoninjector_v17.build.variant=dragoninjector_v17
+dragoninjector_v17.build.variant_system_lib=
+dragoninjector_v17.build.vid=0x239A
+dragoninjector_v17.build.pid=0x001E
+dragoninjector_v17.bootloader.tool=openocd
+dragoninjector_v17.bootloader.file=dragoninjector/dragoninjector_v17.bin
+dragoninjector_v17.menu.usbstack.arduino=Arduino
+dragoninjector_v17.menu.usbstack.tinyusb=TinyUSB
+dragoninjector_v17.menu.usbstack.tinyusb.build.flags.usbstack=-DUSE_TINYUSB
+dragoninjector_v17.menu.debug.off=Off
+dragoninjector_v17.menu.debug.on=On
+dragoninjector_v17.menu.debug.on.build.flags.debug=-g
+
 # Adafruit Feather M0 (SAMD21)
 # ------------------------------
 adafruit_feather_m0.name=Adafruit Feather M0
