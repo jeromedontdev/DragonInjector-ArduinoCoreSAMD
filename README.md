@@ -1,3 +1,5 @@
+## This fork is a work in progress that adds support for the ATSAMD21E16C WLCSP35 variant as part of the DragonInjector project.
+
 # Arduino Core for SAMD21 and SAMD51 CPU
 
 This repository contains the source code and configuration files of the Arduino Core
