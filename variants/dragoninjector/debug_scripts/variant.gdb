@@ -1,7 +1,7 @@
 #
-#  Adafruit Trinket M0 OpenOCD script.
+#  Arduino Zero OpenOCD script.
 #
-#  Copyright (c) 2014-2015 Arduino LLC.  All right reserved.
+#  Copyright (c) 2014-2015 Arduino LLC. All right reserved.
 #
 #  This library is free software; you can redistribute it and/or
 #  modify it under the terms of the GNU Lesser General Public
@@ -18,11 +18,14 @@
 #  Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 #
 
-# chip name
-set CHIPNAME at91samd21g18
-set ENDIAN little
+# Define 'reset' command
+define reset
 
-# choose a port here
-set telnet_port 0
+info reg
 
-source [find target/at91samdXX.cfg]
+break main
+
+# End of 'reset' command
+end
+
+target remote | openocd -c "interface cmsis-dap" -c "set CHIPNAME at91samd21e16" -f target/at91samdXX.cfg -c "gdb_port pipe; log_output openocd.log"
